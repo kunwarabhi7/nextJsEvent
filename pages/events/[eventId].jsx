@@ -9,7 +9,7 @@ const EventDetailPage = () => {
 
   if(!event){
     return(
-      <p>No Page Found</p>
+      <p>No Page Found!</p>
     )
   }
 
