@@ -37,6 +37,7 @@ const EventItem = (props) => {
 
       <Link href={exploreLink}>
        <button className="flex  text-white text-center bg-indigo-500 border-0 py-6 px-10 ml-8  focus:outline-none w-40 hover:bg-indigo-600 rounded">Explore events</button>
+
       </Link>   
     </div>
   </div>
