@@ -1,5 +1,6 @@
 import React from 'react'
-import Image from 'next/image'
+import {AiTwotoneCalendar} from 'react-icons/ai'
+import {IoLocationOutline} from 'react-icons/io5'
 import Link from 'next/link' 
 
 const EventItem = (props) => {
@@ -19,20 +20,24 @@ const EventItem = (props) => {
     <div className="lg:w-4/5 mx-auto flex flex-wrap">
       <div className="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
         <h1 className="text-gray-900 text-3xl title-font font-medium mb-4">{title}</h1>
-        <div className="flex border-t border-gray-200 py-2">
-          <span className="text-gray-500">Size</span>
-          <span className="ml-auto text-gray-900">Medium</span>
-        </div>
-        <div className="flex border-t border-b mb-6 border-gray-200 py-2">
-          <span className="text-gray-500">{humanReadableDate}</span>
+        
+        <div className="flex  mb-6  py-2">
+        <AiTwotoneCalendar size={25} className='text-green-500 '  />
+          <span className="ml-4 text-gray-500">{humanReadableDate}</span>
         </div>
         <div className="flex">
+          <IoLocationOutline  size={25} className='text-red-500 ' />
           <span className="title-font font-medium text-2xl text-gray-900">{formattedAddress}</span>
-          <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
           
         </div>
       </div>
-      <img alt="ecommerce" className="lg:w-1/2 w-96 lg:h-auto h-64 object-cover object-center rounded" src={image} />
+      <img alt="ecommerce" className="lg:w-1/2 w-64  h-44 object-cover object-center rounded" src={image} />
+    </div>
+    <div>
+
+      <Link href={exploreLink}>
+       <button className="flex  text-white text-center bg-indigo-500 border-0 py-6 px-10 ml-8  focus:outline-none w-40 hover:bg-indigo-600 rounded">Explore events</button>
+      </Link>   
     </div>
   </div>
 </section>
