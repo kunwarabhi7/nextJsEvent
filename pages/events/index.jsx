@@ -1,10 +1,10 @@
 import React from 'react'
 import EventList from '../../components/Event/EventList'
 import EventSearch from '../../components/EventSearch'
-import { getAllEvents } from '../../dummy_data'
+import { getAllEvents } from '../../helper/helper'
 
-const AllEventsPage = () => {
-  const events = getAllEvents()
+const AllEventsPage = (props) => {
+  const {events} = props ;
 
   return (
     <>
@@ -15,3 +15,14 @@ const AllEventsPage = () => {
 }
 
 export default AllEventsPage
+
+export async function getStaticProps() {
+  const events = await getAllEvents ()
+
+  return { 
+    props : {
+      events:events,
+    }
+
+  }
+}
