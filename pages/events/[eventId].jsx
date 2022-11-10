@@ -1,4 +1,4 @@
-import {getEventById,getAllEvents } from '../../helper/helper'
+import {getEventById,getFeaturedEvents } from '../../helper/helper'
 
 const EventDetailPage = (props) => {
 
@@ -6,7 +6,7 @@ const EventDetailPage = (props) => {
 
   if(!event){
     return(
-      <p>No Page Found!</p>
+      <p className='text-center text-7xl text-red-500 '>Loading...</p>
     )
   }
 
@@ -42,13 +42,13 @@ export async function getStaticProps(contex) {
 }
 
 export async function getStaticPaths() {
-  const events = await getAllEvents();
+  const events = await getFeaturedEvents();
 
   const paths = events.map(event=> ({params: {eventId:event.id}  }))
 
   return {
     paths: paths,
-    fallback:false,
+    fallback:true,
   }
 }
 
