@@ -8,6 +8,7 @@ const index = (props) => {
     <div>
       <Head>
         <title>Events Page</title>
+        <meta name='description' content='Here you can find great events according to your prefrences' />
       </Head>
 <EventList items={props.event} />      
     </div>
